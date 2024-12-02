@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem name="Open Academy" id="menu_openacademy">
+            <menuitem name="Course" id="menu_course" action="action_course"/>
+            <menuitem name="Session" id="menu_session" action="action_session"/>
+            <menuitem name="Person" id="menu_person" action="action_person"/>
+        </menuitem>
+    </data>
+</odoo>

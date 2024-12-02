@@ -1,0 +1,14 @@
+<odoo>
+    <template id="session_list_template" name="Session List">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Liste des Sessions de Cours</h1>
+                <ul>
+                    <t t-foreach="sessions" t-as="session">
+                        <li><t t-esc="session.name"/></li>
+                    </t>
+                </ul>
+            </div>
+        </t>
+    </template>
+</odoo>

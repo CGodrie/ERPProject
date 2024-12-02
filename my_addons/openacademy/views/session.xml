@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_session">
+            <field name="name">Tree Session</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="date_start" />
+                    <field name="date_stop" />
+                    <field name="teacher_id" />
+                    <field name="student_ids" />
+                    <field name="rate" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_session">
+            <field name="name">Form session</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_draft" type="object" string="Draft"/>
+                        <button name="action_confirm" type="object" string="Confirm"/>
+                        <button name="action_done" type="object" string="Done"/>
+                        <button name="action_cancel" type="object" string="Cancel"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="date_start" /> 
+                            <field name="date_stop" />
+                        </group>
+                        <group>
+                            <field name="teacher_id" />
+                            <field name="rate" />
+                            <field name="course_id" />
+                            <field name="len_student" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Students" name="student">
+                            <field name="student_ids"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_session">
+            <field name="name">Session</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">openacademy.session</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

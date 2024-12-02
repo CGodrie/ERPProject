@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_course">
+            <field name="name">Tree Course</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_course">
+            <field name="name">Form Course</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" />
+                    </group>
+                    <notebook>
+                        <page string="Session" name="session">
+                            <field name="session_ids"/>
+                        </page>
+                        <page string="Description" name="description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_course">
+            <field name="name">Course</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">openacademy.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
